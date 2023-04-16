@@ -1,24 +1,26 @@
 Hago persona.restablecer_estado().
-Desde 0 hasta 4 {
- @Sección de movimiento 1:
- Hago asíncronamente persona.rotar.hombro.izquierdo(0+45, 0).
- Hago asíncronamente persona.rotar.hombro.derecho(0-45, 0).
- Si (index es igual que 0) o (index es igual que 1) {
-  Hago asíncronamente persona.rotar.codo.izquierdo(0-45, 0).
-  Hago asíncronamente persona.rotar.codo.derecho(0+45, 0).
- } pero si (index es igual que 2) o (index es igual que 3) {
-  Hago asíncronamente persona.rotar.codo.izquierdo(0+45, 0).
-  Hago asíncronamente persona.rotar.codo.derecho(0-45, 0).
- }.
- Hago pantalla.pintarse().
- Hago asíncronamente una espera de 1000 milisegundos.
- @Sección de movimiento 2:
- Hago asíncronamente persona.rotar.hombro.izquierdo(0-45, 0).
- Hago asíncronamente persona.rotar.hombro.derecho(0+45, 0).
- ### Hago asíncronamente persona.rotar.codo.izquierdo(0+45, 0).
- ### Hago asíncronamente persona.rotar.codo.derecho(0-45, 0).
- Hago pantalla.pintarse().
- Hago asíncronamente una espera de 1000 milisegundos.
+@Sección de bucle de vueltas:
+Desde 0 hasta 10 {
+	@Sección de bucle de secuencia:
+	Desde 0 hasta 4 {
+		@Sección de movimiento 1:
+		Hago asíncronamente persona.rotar.hombro.izquierdo(0+45, 0).
+		Hago asíncronamente persona.rotar.hombro.derecho(0-45, 0).
+		Si (index es igual que 0) o (index es igual que 1) {
+			Hago asíncronamente persona.rotar.codo.izquierdo(0-45, 0).
+			Hago asíncronamente persona.rotar.codo.derecho(0+45, 0).
+		} pero si (index es igual que 2) o (index es igual que 3) {
+			Hago asíncronamente persona.rotar.codo.izquierdo(0+45, 0).
+			Hago asíncronamente persona.rotar.codo.derecho(0-45, 0).
+		}.
+		Hago pantalla.pintarse().
+		Hago asíncronamente una espera de 200 milisegundos.
+		@Sección de movimiento 2:
+		Hago asíncronamente persona.rotar.hombro.izquierdo(0-45, 0).
+		Hago asíncronamente persona.rotar.hombro.derecho(0+45, 0).
+		Hago pantalla.pintarse().
+		Hago asíncronamente una espera de 200 milisegundos.
+	}.
 }.
 Hago persona.restablecer_estado().
 Hago pantalla.pintarse().
