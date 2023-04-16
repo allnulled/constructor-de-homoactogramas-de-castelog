@@ -122,12 +122,12 @@ Además del estado inicial que emana de la propiedad estática `Persona.estado_i
 ```js
 this.rotar = {
   hombro: {
-    izquierda: function() { /* ... */ },
-    derecha: function() { /* ... */ }
+    izquierdo: function() { /* ... */ },
+    derecho: function() { /* ... */ }
   },
   codo: {
-    izquierda: function() { /* ... */ },
-    derecha: function() { /* ... */ }
+    izquierdo: function() { /* ... */ },
+    derecho: function() { /* ... */ }
   },
   pierna: {
     izquierda: function() { /* ... */ },
