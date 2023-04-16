@@ -83,8 +83,8 @@ Puedes explorar por consola los objetos inyectados automáticamente en el script
   - `pantalla` - el recuadro que guarda los elementos a pintar y los pinta conjuntamente
   - `componente` - el componente Vue de la caja de texto del scripting de Calo.
 
-Para 
+Para saber más, puedes ir al fuente de `src/www/js/play.js` que es donde están definidas las clases.
 
 ## ¿Por qué?
 
-Porque es básico algo para representar esto rápidamente.
+Porque es básico algo para representar esto visualmente y rápidamente.
