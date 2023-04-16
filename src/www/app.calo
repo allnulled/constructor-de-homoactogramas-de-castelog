@@ -8,8 +8,7 @@ Ejecutable como documento HTML5
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
       .canvas_box {
-        background-color: #222;
-        box-shadow: 0 0 4px black;
+        width: 100%;
         text-align: center;
         padding-top: 20px;
         padding-bottom: 20px;
@@ -28,17 +27,21 @@ Ejecutable como documento HTML5
     <script src="js/constructor-de-homactogramas-de-castelog.js"></script>
 </head>
 <body class="win7">
-  <div class="window">
-    <div class="title-bar">
-      <div class="title-bar-text">
-        ✨ Homactógrafo de Castelog ✨
+  <div style="padding:4px;">
+    <div class="window">
+      <div class="title-bar">
+        <div class="title-bar-text">
+          ✨ Homactógrafo de Castelog ✨
+        </div>
       </div>
-    </div>
-    <div class="window-body">
-      <div class="canvas_box">
-        <canvas id="canvas_for_demo"></canvas>
+      <div class="window-body">
+        <div style="overflow-y: scroll;background-color: #222;box-shadow: 0 0 4px black;">
+          <div class="canvas_box">
+            <canvas id="canvas_for_demo"></canvas>
+          </div>
+        </div>
+        <div id="app"></div>
       </div>
-      <div id="app"></div>
     </div>
   </div>
 </body>.
