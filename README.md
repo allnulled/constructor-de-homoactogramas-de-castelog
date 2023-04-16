@@ -39,7 +39,7 @@ mpm test
 
 ## API de PaloMan y su entorno
 
-**PaloMan** es el referente principal del homactograma. Es una representación humana, a base de palos.
+**PaloMan** es el referente principal de los homactogramas de Castelog. Es una representación humana, a base de palos.
 
 El entorno son todas las herramientas que hacen posible a PaloMan.
 
