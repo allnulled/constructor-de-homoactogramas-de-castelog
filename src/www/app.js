@@ -59977,7 +59977,6 @@ this.mostrar_error( error );}
 }
 },
 mounted() {try {
-console.log("MONTADOOOOO");
 this.juego = this.$window.play(  );
 this.persona = this.juego.persona;
 this.fondo = this.juego.fondo;

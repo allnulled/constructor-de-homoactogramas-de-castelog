@@ -3,7 +3,7 @@ Ejecutable como documento HTML5
     con nombre app-por-defecto
     con versión 0.0.1
 <head>
-    <title>Canvas Playground</title>
+    <title>🧍‍♂️ Homactogramas de Calo</title>
     <meta charset="utf8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <style>
@@ -16,9 +16,9 @@ Ejecutable como documento HTML5
       }
       .w_100 { width: 100%; }
     </style>
-    <script src="/js/calo.js"></script>
-    <script src="/js/castelog-parser.js"></script>
-    <script src="/js/play.js"></script>
+    <script src="js/calo.js"></script>
+    <script src="js/castelog-parser.js"></script>
+    <script src="js/play.js"></script>
 </head>
 <body>
     <div class="canvas_box">

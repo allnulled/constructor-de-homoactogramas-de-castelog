@@ -15,6 +15,12 @@ Un homoactograma u **homactograma** es una representación de la actividad human
 
 [https://allnulled.github.io/constructor-de-homoactogramas-de-castelog](https://allnulled.github.io/constructor-de-homoactogramas-de-castelog)
 
+## Ejemplos
+
+Puedes consultar ejemplos de scripts de homactogramas en:
+
+- [`src/www/js/homactogramas/`](https://github.com/allnulled/constructor-de-homoactogramas-de-castelog/tree/main/src/www/js/homactogramas/)
+
 ## Instalación
 
 En un directorio nuevo, clona el proyecto:
@@ -84,33 +90,33 @@ La API de PaloMan de la clase Persona contiene los siguientes valores que se con
 ```js
 static get estado_inicial() {
   return {
-    x: 80;
-    y: SETTINGS.height - (250);
-    escala: 25;
-    cabeza_con_cuello: 0;
-    cuello_con_columna: 0;
-    hombro_izquierdo: 0;
-    hombro_derecho: 0;
-    codo_izquierdo: 0;
-    codo_derecho: 0;
-    columna_con_cadera: 0;
-    cadera_izquierda: 0;
-    cadera_derecha: 0;
-    rodilla_izquierda: 0;
-    rodilla_derecha: 0;
-    largo_de_brazo: 45;
-    largo_de_antebrazo: 50;
-    largo_de_pierna: 60;
-    largo_de_antepierna: 70;
-    largo_de_columna: 75;
-    apertura_del_hombro_izq: 180;
-    apertura_del_hombro_der: 180;
-    apertura_del_codo_der: 180;
-    apertura_del_codo_izq: 180;
-    apertura_de_la_pierna_izq: 180;
-    apertura_de_la_pierna_der: 180;
-    apertura_de_la_rodilla_izq: 180;
-    apertura_de_la_rodilla_der: 180;
+    x: 80,
+    y: SETTINGS.height - (250),
+    escala: 25,
+    cabeza_con_cuello: 0,
+    cuello_con_columna: 0,
+    hombro_izquierdo: 0,
+    hombro_derecho: 0,
+    codo_izquierdo: 0,
+    codo_derecho: 0,
+    columna_con_cadera: 0,
+    cadera_izquierda: 0,
+    cadera_derecha: 0,
+    rodilla_izquierda: 0,
+    rodilla_derecha: 0,
+    largo_de_brazo: 45,
+    largo_de_antebrazo: 50,
+    largo_de_pierna: 60,
+    largo_de_antepierna: 70,
+    largo_de_columna: 75,
+    apertura_del_hombro_izq: 180,
+    apertura_del_hombro_der: 180,
+    apertura_del_codo_der: 180,
+    apertura_del_codo_izq: 180,
+    apertura_de_la_pierna_izq: 180,
+    apertura_de_la_pierna_der: 180,
+    apertura_de_la_rodilla_izq: 180,
+    apertura_de_la_rodilla_der: 180,
   };
 }
 ```

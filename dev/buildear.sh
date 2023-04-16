@@ -1,0 +1,1 @@
+cp -R ./src/www/* ./docs/ && mv docs/app-por-defecto.0.0.1.html docs/index.html

@@ -120,7 +120,6 @@ Desde 0 hasta 10 {
       } en errores hago this.mostrar_error(error)
     }.
     método mounted donde {
-      imprimo "MONTADOOOOO".
       asigno this.juego como this.$window.play().
       asigno this.persona como this.juego.persona.
       asigno this.fondo como this.juego.fondo.
