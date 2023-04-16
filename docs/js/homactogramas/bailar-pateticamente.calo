@@ -1,0 +1,35 @@
+@Sección de extensión del prototipo de persona con una función:
+Imprimo "Aplicando bailar patéticamente.".
+Intento {
+  Asigno window.datos_del_juego.juego.PersonaPrototipo.prototype.bailar_pateticamente como una función asíncrona donde {
+    Desacoplo constantes { persona, pantalla } a partir de window.datos_del_juego.juego.
+    Hago persona.restablecer_estado().
+    @Sección de bucle de vueltas:
+    Desde 0 hasta 10 {
+      @Sección de bucle de secuencia:
+      Desde 0 hasta 4 {
+        @Sección de movimiento 1:
+        Hago asíncronamente persona.rotar.hombro.izquierdo(0+45, 0).
+        Hago asíncronamente persona.rotar.hombro.derecho(0-45, 0).
+        Si (index es igual que 0) o (index es igual que 1) {
+          Hago asíncronamente persona.rotar.codo.izquierdo(0-45, 0).
+          Hago asíncronamente persona.rotar.codo.derecho(0+45, 0).
+        } pero si (index es igual que 2) o (index es igual que 3) {
+          Hago asíncronamente persona.rotar.codo.izquierdo(0+45, 0).
+          Hago asíncronamente persona.rotar.codo.derecho(0-45, 0).
+        }.
+        Hago pantalla.pintarse().
+        Hago asíncronamente una espera de 200 milisegundos.
+        @Sección de movimiento 2:
+        Hago asíncronamente persona.rotar.hombro.izquierdo(0-45, 0).
+        Hago asíncronamente persona.rotar.hombro.derecho(0+45, 0).
+        Hago pantalla.pintarse().
+        Hago asíncronamente una espera de 200 milisegundos.
+      }.
+    }.
+    @Sección de reestablecimiento de estado:
+    Hago persona.restablecer_estado().
+    Hago pantalla.pintarse().
+  } en errores imprimo error después hago this.mostrar_error(error).
+  Imprimo "Aplicado bailar patéticamente.".
+} en errores imprimo error.

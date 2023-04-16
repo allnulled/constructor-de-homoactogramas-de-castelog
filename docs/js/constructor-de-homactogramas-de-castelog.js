@@ -21,8 +21,8 @@ const ConstructorDeHomactogramasDeCastelog = Castelog.metodos.un_componente_vue2
  + "      <div style=\"position: relative;\">"
  + "        <textarea style=\"font-family: monospace; font-size: 9px; resize: vertical; min-height: 900px;\" class=\"w_100\" v-model=\"codigo_actual\"></textarea>"
  + "        <div style=\"position: absolute; top: 5px; right: 5px; left: auto; bottom: auto;\">"
- + "          <button v-on:click=\"() => compilar(true)\">Compilar</button>"
- + "          <button v-on:click=\"() => aplicar()\">Aplicar</button>"
+ + "          <button style=\"opacity: 0.2;\" v-on:click=\"() => compilar(true)\">Compilar</button>"
+ + "          <button style=\"opacity: 0.2;\" v-on:click=\"() => aplicar()\">Aplicar</button>"
  + "        </div>"
  + "      </div>"
  + "    </div>"
@@ -30,9 +30,6 @@ const ConstructorDeHomactogramasDeCastelog = Castelog.metodos.un_componente_vue2
   function(component) {return { data() {try {
 return { codigo_actual_js:"",
 codigo_actual:"\nHago pantalla.pintarse.cada(200).\nDesde 0 hasta 10 {\n  Hago asíncronamente persona.rotar.codo.izquierdo(40,1000).\n}.\n".trim(  ),
-persona:undefined,
-fondo:undefined,
-pantalla:undefined,
 exito_de_ejecucion:undefined,
 exito_de_compilacion:undefined,
 error:undefined
@@ -86,6 +83,7 @@ throw error;
 
 },
 mostrar_error:function( error ) {try {
+console.log(error);
 this.exito_de_ejecucion = undefined;
 this.exito_de_compilacion = undefined;
 this.error = error;
@@ -109,7 +107,7 @@ throw error;
 compilar:function( mostrar_exito ) {try {
 const codigo_calo = this.codigo_actual;
 const codigo_js = Castelog_parser.parse( codigo_calo );
-const codigo_temporal = `(async function(persona, pantalla, fondo, componente) { try { ${codigo_js} } catch(error) { console.log(error); this.mostrar_error(error); } })`;
+const codigo_temporal = `(async function(persona, pantalla, fondo, juego, paloman_api, window, componente) { try { ${codigo_js} } catch(error) { this.mostrar_error(error); } })`;
 const codigo_js_final = codigo_temporal;
 this.codigo_actual_js = codigo_js_final;
 if(mostrar_exito) {
@@ -122,10 +120,16 @@ this.mostrar_error( error );}
 aplicar:async function() {try {
 const codigo_js = this.compilar(  );
 const funcion_js = this.$window.eval( codigo_js );
+const { juego, persona, pantalla, fondo
+} = this.$window.datos_del_juego;
 const resultado = (await funcion_js.call( this,
-this.persona,
-this.pantalla,
-this.pantalla.fondo ));
+persona,
+pantalla,
+fondo,
+juego,
+this.$window.Paloman_API,
+this.$window.window,
+this ));
 if((!(typeof resultado === 'undefined'))) {
 this.mostrar_exito_de_ejecucion( resultado );
 }
@@ -134,12 +138,12 @@ this.mostrar_error( error );}
 }
 },
 mounted() {try {
-this.juego = this.$window.play(  );
-this.persona = this.juego.persona;
-this.fondo = this.juego.fondo;
-this.pantalla = this.juego.pantalla;
+if(typeof this.$window.Paloman_API === 'undefined') {
+throw new Error( "El Homactógrafo de Castelog requiere tener cargada la Paloman_API para funcionar" );
+}
+this.$window.datos_del_juego = this.$window.Paloman_API.iniciar(  );
 setTimeout( () => {try {
-this.pantalla.pintarse(  );
+this.$window.datos_del_juego.pantalla.pintarse(  );
 } catch(error) {
 console.log(error);
 throw error;
@@ -147,11 +151,13 @@ throw error;
 
 },
 1000 );
+const scripts_de_ejemplo = [ "./js/homactogramas/bailar-pateticamente.js" ];
+for(let index = 0; index < scripts_de_ejemplo.length; index++) {const script_url = scripts_de_ejemplo[ index ];
+const script_tag = document.createElement( "script" );
+script_tag.src = script_url;
+document.body.append( script_tag );}
 } catch(error) {
-console.log(error);
-throw error;
-}
-
+this.mostrar_error( error );}
 }
 };},
   null);
