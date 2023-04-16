@@ -22,7 +22,7 @@ Entra en la aplicación y prueba a meter scripts en castelog:
 
 
 ```calo
-Creo saludar como asíncronamente una función asíncrona donde {
+Creo saludar como una función asíncrona donde {
     Hago asíncronamente persona.rotar.codo.derecho(0+200,1000).
     Hago pantalla.pintarse().
     Hago asíncronamente persona.rotar.codo.derecho(0-40,1000).
