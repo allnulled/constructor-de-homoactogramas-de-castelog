@@ -119,6 +119,7 @@ Todas estas propiedades forman parte del llamado *estado inicial* de la `Persona
 
 Además del estado inicial que emana de la propiedad estática `Persona.estado_inicial` (referida en los métodos internos mediante la expresión `this.constructor.estado_inicial` para permitir sobreescritura por herencia), la clase `Persona` proporciona otras 2 propiedades de interés establecidas: `this.
 
+```js
 this.rotar = {
   hombro: {
     izquierda: function() { /* ... */ },
