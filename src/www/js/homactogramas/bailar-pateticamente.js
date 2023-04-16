@@ -1,4 +1,9 @@
 
+console.log("Aplicando bailar patéticamente.");
+try {
+window.datos_del_juego.juego.PersonaPrototipo.prototype.bailar_pateticamente = async function() {try {
+const { persona, pantalla
+} = window.datos_del_juego.juego;
 persona.restablecer_estado(  );
 for(let index = 0; index < 10; index++) {for(let index = 0; index < 4; index++) {(await persona.rotar.hombro.izquierdo( 0 + 45,
 0 ));
@@ -38,3 +43,10 @@ throw error;
 }));}}
 persona.restablecer_estado(  );
 pantalla.pintarse(  );
+} catch(error) {
+console.log(error);
+this.mostrar_error( error );}
+};
+console.log("Aplicado bailar patéticamente.");
+} catch(error) {
+console.log(error);}

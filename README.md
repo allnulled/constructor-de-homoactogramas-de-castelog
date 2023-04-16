@@ -83,7 +83,7 @@ El siguiente paso lógico sería agrupar movimientos de bajo nivel para conforma
  - permitan concatenar asíncronamente otros movimientos, esto es que `retornan promesas` o son `funciones asíncronas`.
  - también deben poder cambiar las coordenadas de la persona cambiando los valores de `persona.x` y `persona.y`.
 
-El personaje `PaloMan` es una instancia de la clase `Persona`. Puedes explorar más en [`src/www/js/play.js`](https://github.com/allnulled/constructor-de-homoactogramas-de-castelog/blob/main/src/www/js/play.js)
+El personaje **PaloMan** es una instancia de la clase `Persona`, y pueden crearse más. Puedes explorar más en [`src/www/js/paloman-api.js`](https://github.com/allnulled/constructor-de-homoactogramas-de-castelog/blob/main/src/www/js/paloman-api.js)
 
 La API de PaloMan de la clase Persona contiene los siguientes valores que se configuran en el constructor:
 
@@ -163,12 +163,15 @@ Si no se entiende del todo, no importa, porque en los ejemplos se ve mucho más 
 
 ### API de PaloMan de Entorno de Desarrollo de Homactogramas
 
-Esta API se refiere a los objetos y clases que no son la Persona.
+Esta parte de la API se refiere a los objetos y clases además de la Persona.
 
-Puedes explorar por consola los objetos inyectados automáticamente en el scripting de Calo siguientes:
+En los scripts de Calo se inyectan automáticamente los objetos siguientes:
   - `persona` - el personaje PaloMan. Es una instancia de la clase `Persona` de la API de PaloMan.
   - `fondo` - el fondo de pantalla. Es una instancia de la clase `Fondo` de la API de PaloMan.
   - `pantalla` - el recuadro que guarda los elementos a pintar y los pinta conjuntamente. Es una instancia de la clase `Pantalla` de la API de PaloMan.
+  - `juego` - la instancia de `Paloman_API`, de la que cuelgan: `Persona`, `persona`, `Fondo`, `fondo`, `Pantalla`, `pantalla`...
+    - éste es el objeto que necesitamos para extender las capacidades globales de todos los objetos `Persona` a la vez, por ejemplo.
+  - `paloman_api` - la API de PaloMan global, la de `window.Paloman_API`.
   - `componente` - el componente Vue de la caja de texto del scripting de Calo. Es una instancia de la clase `Component` de la API de Vue2.
 
 Para pintar los elementos de la pantalla en su estado actual, puedes hacer 2 cosas:
@@ -177,7 +180,7 @@ Para pintar los elementos de la pantalla en su estado actual, puedes hacer 2 cos
 
 En los ejemplos se utiliza el segundo procedimiento, para no estar repitiéndose, pero puede interesarte usar el método de más bajo nivel, `pantalla.pintarse` y tomar el control del ritmo del pintado.
 
-Para saber más, puedes ir al fuente de `src/www/js/play.js` que es donde están definidas las clases.
+Para saber más, puedes ir al fuente de `src/www/js/paloman-api.js` que es donde están definidas las clases.
 
 ## Ejemplos
 

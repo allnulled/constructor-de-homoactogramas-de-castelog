@@ -20,8 +20,8 @@ creo ConstructorDeHomactogramasDeCastelog como un componente vue2 con nombre "Co
       <div style="position: relative;">
         <textarea style="font-family: monospace; font-size: 9px; resize: vertical; min-height: 900px;" class="w_100" v-model="codigo_actual"></textarea>
         <div style="position: absolute; top: 5px; right: 5px; left: auto; bottom: auto;">
-          <button v-on:click="() => compilar(true)">Compilar</button>
-          <button v-on:click="() => aplicar()">Aplicar</button>
+          <button style="opacity: 0.2;" v-on:click="() => compilar(true)">Compilar</button>
+          <button style="opacity: 0.2;" v-on:click="() => aplicar()">Aplicar</button>
         </div>
       </div>
     </div>
@@ -37,9 +37,6 @@ Desde 0 hasta 10 {
   Hago asíncronamente persona.rotar.codo.izquierdo(40,1000).
 }.
 }.trim(),
-        persona: undefined,
-        fondo: undefined,
-        pantalla: undefined,
         exito_de_ejecucion: undefined,
         exito_de_compilacion: undefined,
         error: undefined
@@ -61,7 +58,7 @@ Desde 0 hasta 10 {
         hago this.$forceUpdate(true).
       },
       mostrar_error: una función con (error) donde {
-        ### imprimo error.
+        imprimo error.
         asigno this.exito_de_ejecucion como undefined.
         asigno this.exito_de_compilacion como undefined.
         asigno this.error como error.
@@ -71,7 +68,7 @@ Desde 0 hasta 10 {
       compilar: una función con (mostrar_exito) donde {
         creo codigo_calo como this.codigo_actual.
         creo codigo_js como Castelog_parser.parse(codigo_calo).
-        creo codigo_temporal como `(async function(persona, pantalla, fondo, componente) { try { ${codigo_js} } catch(error) { console.log(error); this.mostrar_error(error); } })`.
+        creo codigo_temporal como `(async function(persona, pantalla, fondo, juego, paloman_api, window, componente) { try { ${codigo_js} } catch(error) { this.mostrar_error(error); } })`.
         creo codigo_js_final como codigo_temporal.
         asigno this.codigo_actual_js como codigo_js_final.
         si mostrar_exito {
@@ -82,18 +79,26 @@ Desde 0 hasta 10 {
       aplicar: una función asíncrona donde {
         creo codigo_js como this.compilar().
         creo funcion_js como this.$window.eval(codigo_js).
-        creo resultado como asíncronamente funcion_js.call(this, this.persona, this.pantalla, this.pantalla.fondo).
+        desacoplo constantes { juego, persona, pantalla, fondo } a partir de this.$window.datos_del_juego.
+        creo resultado como asíncronamente funcion_js.call(this, persona, pantalla, fondo, juego, this.$window.Paloman_API, this.$window.window, this).
         si resultado no es tipo indefinido {
           hago this.mostrar_exito_de_ejecucion(resultado).
         }.
       } en errores hago this.mostrar_error(error)
     }.
     método mounted donde {
-      asigno this.juego como this.$window.play().
-      asigno this.persona como this.juego.persona.
-      asigno this.fondo como this.juego.fondo.
-      asigno this.pantalla como this.juego.pantalla.
-      hago setTimeout(una lambda donde hago this.pantalla.pintarse(), 1000).
-    }.
+      si this.$window.Paloman_API es tipo indefinido lanzo un nuevo Error("El Homactógrafo de Castelog requiere tener cargada la Paloman_API para funcionar").
+      asigno this.$window.datos_del_juego como this.$window.Paloman_API.iniciar().
+      hago setTimeout(una lambda donde hago this.$window.datos_del_juego.pantalla.pintarse(), 1000).
+      creo scripts_de_ejemplo como [
+        "./js/homactogramas/bailar-pateticamente.js"
+      ].
+      desde 0 hasta scripts_de_ejemplo.length {
+        creo script_url como scripts_de_ejemplo[index].
+        creo script_tag como document.createElement("script").
+        asigno script_tag.src como script_url.
+        hago document.body.append(script_tag).
+      }.
+    } en errores hago this.mostrar_error(error).
   }.
 }.

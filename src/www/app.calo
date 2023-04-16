@@ -23,7 +23,7 @@ Ejecutable como documento HTML5
     </style>
     <script src="js/calo.js"></script>
     <script src="js/castelog-parser.js"></script>
-    <script src="js/play.js"></script>
+    <script src="js/paloman-api.js"></script>
     <script src="js/constructor-de-homactogramas-de-castelog.js"></script>
 </head>
 <body class="win7">

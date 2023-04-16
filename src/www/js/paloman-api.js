@@ -1,4 +1,7 @@
-function play() {
+function iniciar(exportar_a_variable_window = "datos_del_juego") {
+  if (exportar_a_variable_window in window) {
+    throw new Error("Variable global «" + exportar_a_variable_window + "» ya existe. Proporciona otro nombre a la función PalomanAPI.iniciar para no ver este error");
+  }
   const utils = {
     toRadians: function (angle) {
       return angle * (Math.PI / 180);
@@ -25,8 +28,10 @@ function play() {
     throw new Error("Canvas element has no context");
   }
   const ctx = canvas.getContext('2d');
-  const Fondo = class {
+  const FondoPrototipo = class {};
+  const Fondo = class extends FondoPrototipo {
     constructor() {
+      super();
     }
     pintarse(ctx) {
       Pintar_fondo: {
@@ -47,7 +52,8 @@ function play() {
       }
     }
   };
-  const Persona = class {
+  const PersonaPrototipo = class {};
+  const Persona = class extends PersonaPrototipo {
     static get estado_inicial() {
       return {
         x: 80,
@@ -83,6 +89,7 @@ function play() {
       Object.assign(this, this.constructor.estado_inicial);
     }
     constructor() {
+      super();
       this.restablecer_estado();
       this.rotar = {
         hombro: {
@@ -383,8 +390,10 @@ function play() {
       }
     }
   }
-  class Pantalla {
+  const PantallaPrototipo = class { };
+  class Pantalla extends PantallaPrototipo {
     constructor(ctx) {
+      super(ctx);
       this.contexto = ctx;
       this.elementos = [];
       this.pintarse = () => {
@@ -411,12 +420,15 @@ function play() {
   const persona = new Persona();
   pantalla.incluir(fondo);
   pantalla.incluir(persona);
-  return { pantalla, fondo, persona };
+  window[exportar_a_variable_window] = {};
+  Object.assign(window[exportar_a_variable_window], { pantalla, fondo, persona, Pantalla, Fondo, Persona, PantallaPrototipo, FondoPrototipo, PersonaPrototipo });
+  window[exportar_a_variable_window].juego  = window[exportar_a_variable_window];
+  return window[exportar_a_variable_window];
 };
 
-window.play = play;
+window.Paloman_API = { iniciar };
 
-window.addEventListener("load", play);
+window.addEventListener("load", window.Paloman_API.iniciar);
 
 
 
