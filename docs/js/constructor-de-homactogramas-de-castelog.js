@@ -109,7 +109,7 @@ throw error;
 compilar:function( mostrar_exito ) {try {
 const codigo_calo = this.codigo_actual;
 const codigo_js = Castelog_parser.parse( codigo_calo );
-const codigo_temporal = `(async function(persona, pantalla, fondo, componente) { try { console.log(this); ${codigo_js} } catch(error) { console.log(error); this.mostrar_error(error); } })`;
+const codigo_temporal = `(async function(persona, pantalla, fondo, componente) { try { ${codigo_js} } catch(error) { console.log(error); this.mostrar_error(error); } })`;
 const codigo_js_final = codigo_temporal;
 this.codigo_actual_js = codigo_js_final;
 if(mostrar_exito) {

@@ -34,7 +34,7 @@ Ejecutable como documento HTML5
           ✨ Homactógrafo de Castelog ✨
         </div>
       </div>
-      <div class="window-body">
+      <div class="window-body" style="overflow-y: hide;">
         <div style="overflow-y: scroll;background-color: #222;box-shadow: 0 0 4px black;">
           <div class="canvas_box">
             <canvas id="canvas_for_demo"></canvas>

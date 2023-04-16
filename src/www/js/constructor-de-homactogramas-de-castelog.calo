@@ -71,7 +71,7 @@ Desde 0 hasta 10 {
       compilar: una función con (mostrar_exito) donde {
         creo codigo_calo como this.codigo_actual.
         creo codigo_js como Castelog_parser.parse(codigo_calo).
-        creo codigo_temporal como `(async function(persona, pantalla, fondo, componente) { try { console.log(this); ${codigo_js} } catch(error) { console.log(error); this.mostrar_error(error); } })`.
+        creo codigo_temporal como `(async function(persona, pantalla, fondo, componente) { try { ${codigo_js} } catch(error) { console.log(error); this.mostrar_error(error); } })`.
         creo codigo_js_final como codigo_temporal.
         asigno this.codigo_actual_js como codigo_js_final.
         si mostrar_exito {
