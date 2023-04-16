@@ -188,6 +188,14 @@ Hay ejemplos scripts en:
 
   - [`src/www/js/homactogramas/`](https://github.com/allnulled/constructor-de-homoactogramas-de-castelog/tree/main/src/www/js/homactogramas/)
 
+Estos ejemplos se cargan automáticamente (si lo especificas en `constructor-de-homactogramas-de-castelog.calo` y compilas el fichero).
+
+De momento, puedes hacer:
+
+```calo
+Hago asíncronamente persona.bailar_pateticamente().
+```
+
 ## ¿Por qué?
 
 Porque es básico algo para representar esto visualmente y rápidamente.
