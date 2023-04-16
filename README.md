@@ -60,10 +60,10 @@ hago asíncronamente persona.rotar.rodilla.derecha(90, 1000).
 hago asíncronamente persona.rotar.rodilla.izquierda(90, 1000).
 ```
 
-Para **secuencias de movimientos atomizadas** o agrupados, puedes usar Castelog parecidamente a esto:
+Para **secuencias de movimientos atomizadas** o agrupados, puedes usar Castelog parecidamente a esto, en lugar de `hecho`, en `función` para almacenar la secuencia en memoria:
 
 ```calo
-creo saludo como una función asíncronas donde {
+creo saludo como un hecho asíncrona donde {
     hago asíncronamente persona.rotar.codo.derecho(200,1000).
     hago asíncronamente persona.rotar.codo.derecho(0-40,1000).
     hago asíncronamente persona.rotar.codo.derecho(40,1000).
