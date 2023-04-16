@@ -24,15 +24,19 @@ Entra en la aplicación y prueba a meter scripts en castelog:
 ```calo
 Creo saludar como asíncronamente una función asíncrona donde {
     Hago asíncronamente persona.rotar.codo.derecho(0+200,1000).
+    Hago pantalla.pintarse().
     Hago asíncronamente persona.rotar.codo.derecho(0-40,1000).
+    Hago pantalla.pintarse().
     Hago asíncronamente persona.rotar.codo.derecho(0+40,1000).
+    Hago pantalla.pintarse().
     Hago asíncronamente persona.rotar.codo.derecho(0-40,1000).
+    Hago pantalla.pintarse().
     Hago asíncronamente persona.rotar.codo.derecho(0-160,1000).
     Hago pantalla.pintarse().
 }.
 Hago asíncronamente saludar(). ### Función que se puede bloquear asíncronamente
 Hago asíncronamente persona.bailar_pateticamente(). ### Secuencia atomizada de ejemplo
-Hago persona.restablecer(). ### Retornar el estado inicial a la persona.
+Hago persona.restablecer_estado(). ### Retornar el estado inicial a la persona.
 ```
 
 La API de Paloman de movimientos vendría a ser esto:
