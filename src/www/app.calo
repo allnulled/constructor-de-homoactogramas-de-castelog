@@ -15,6 +15,12 @@ Ejecutable como documento HTML5
         padding-bottom: 20px;
       }
       .w_100 { width: 100%; }
+      textarea,
+      pre {
+        -moz-tab-size : 2;
+        -o-tab-size : 2;
+        tab-size : 2;
+      }
     </style>
     <script src="js/calo.js"></script>
     <script src="js/castelog-parser.js"></script>
