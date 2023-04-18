@@ -28,7 +28,7 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
     throw new Error("Canvas element has no context");
   }
   const ctx = canvas.getContext('2d');
-  const FondoPrototipo = class {};
+  const FondoPrototipo = class { };
   const Fondo = class extends FondoPrototipo {
     constructor() {
       super();
@@ -52,7 +52,7 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
       }
     }
   };
-  const PersonaPrototipo = class {};
+  const PersonaPrototipo = class { };
   const Persona = class extends PersonaPrototipo {
     static get estado_inicial() {
       return {
@@ -110,7 +110,99 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
             });
           }
         }
-      }
+      };
+      this.posicionar = {
+        eje: {
+          x: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.x = this.constructor.estado_inicial.x + diff;
+                ok();
+              }, secs);
+            });
+          },
+          y: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.y = this.constructor.estado_inicial.y + diff;
+                ok();
+              }, secs);
+            });
+          },
+        },
+        hombro: {
+          izquierdo: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_del_hombro_izq = this.constructor.estado_inicial.apertura_del_hombro_izq + diff;
+                ok();
+              }, secs);
+            });
+          },
+          derecho: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_del_hombro_der = this.constructor.estado_inicial.apertura_del_hombro_der + diff;
+                ok();
+              }, secs);
+            });
+          }
+        },
+        codo: {
+          izquierdo: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_del_codo_izq = this.constructor.estado_inicial.apertura_del_codo_izq + diff;
+                ok();
+              }, secs);
+            });
+          },
+          derecho: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_del_codo_der = this.constructor.estado_inicial.apertura_del_codo_der + diff;
+                ok();
+              }, secs);
+            });
+          }
+        },
+        pierna: {
+          izquierda: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_de_la_pierna_izq = this.constructor.estado_inicial.apertura_de_la_pierna_izq + diff;
+                ok();
+              }, secs);
+            });
+          },
+          derecha: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_de_la_pierna_der = this.constructor.estado_inicial.apertura_de_la_pierna_der + diff;
+                ok();
+              }, secs);
+            });
+          }
+        },
+        rodilla: {
+          izquierda: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_de_la_rodilla_izq = this.constructor.estado_inicial.apertura_de_la_rodilla_izq + diff;
+                ok();
+              }, secs);
+            });
+          },
+          derecha: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.apertura_de_la_rodilla_der = this.constructor.estado_inicial.apertura_de_la_rodilla_der + diff;
+                ok();
+              }, secs);
+            });
+          }
+        }
+      };
       this.rotar = {
         hombro: {
           izquierdo: (diff, secs = 0) => {
@@ -442,7 +534,7 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
   pantalla.incluir(persona);
   window[exportar_a_variable_window] = {};
   Object.assign(window[exportar_a_variable_window], { pantalla, fondo, persona, Pantalla, Fondo, Persona, PantallaPrototipo, FondoPrototipo, PersonaPrototipo });
-  window[exportar_a_variable_window].juego  = window[exportar_a_variable_window];
+  window[exportar_a_variable_window].juego = window[exportar_a_variable_window];
   return window[exportar_a_variable_window];
 };
 
