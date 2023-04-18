@@ -20,8 +20,8 @@ creo ConstructorDeHomactogramasDeCastelog como un componente vue2 con nombre "Co
       <div style="position: relative;">
         <textarea style="font-family: monospace; font-size: 9px; resize: vertical; min-height: 900px;" class="w_100" v-model="codigo_actual"></textarea>
         <div style="position: absolute; top: 5px; right: 5px; left: auto; bottom: auto;">
-          <button style="opacity: 0.2;" v-on:click="() => compilar(true)">Compilar</button>
-          <button style="opacity: 0.2;" v-on:click="() => aplicar()">Aplicar</button>
+          <button style="opacity: 0.8;" v-on:click="() => compilar(true)">Compilar</button>
+          <button style="opacity: 0.8;" v-on:click="() => aplicar()">Aplicar</button>
         </div>
       </div>
     </div>

@@ -6,7 +6,7 @@
   "scripts": {
     "build": "sh ./dev/buildear.sh",
     "test": "http-server -c-1 src/www",
-    "test:nodep": "npx http-server -c-1 src/www"
+    "test:nodep": "npx http-server -c-1 -o src/www"
   },
   "keywords": [],
   "author": "",

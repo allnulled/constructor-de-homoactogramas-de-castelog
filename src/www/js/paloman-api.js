@@ -91,6 +91,26 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
     constructor() {
       super();
       this.restablecer_estado();
+      this.trasladar = {
+        eje: {
+          x: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.x += diff;
+                ok();
+              }, secs);
+            });
+          },
+          y: (diff, secs = 0) => {
+            return new Promise(ok => {
+              setTimeout(() => {
+                this.y += diff;
+                ok();
+              }, secs);
+            });
+          }
+        }
+      }
       this.rotar = {
         hombro: {
           izquierdo: (diff, secs = 0) => {

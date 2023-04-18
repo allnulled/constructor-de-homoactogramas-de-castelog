@@ -42,6 +42,8 @@ Hago persona.restablecer_estado(). ### Retornar el estado inicial a la persona.
 La API de Paloman de movimientos vendría a ser esto:
 
 ```calo
+hago asíncronamente persona.trasladar.eje.x(1) ### (se mueve horizontalmente 1 px a la derecha)
+hago asíncronamente persona.trasladar.eje.y(1) ### (se mueve verticalmente 1 px abajo)
 hago asíncronamente persona.rotar.hombro.derecho(90, 1000). ### rota hombro derecho 90º tras esperar 1000 milisegundos (o 1 segundo)
 hago asíncronamente persona.rotar.hombro.izquierdo(0-90, 1000). ### rota hombro derecho 90º negativos tras esperar 1000 milisegundos (o 1 segundo)
 hago asíncronamente persona.rotar.codo.derecho(90, 1000). ### y así todo el rato...
