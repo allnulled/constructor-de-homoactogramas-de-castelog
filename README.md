@@ -69,7 +69,7 @@ class Persona {
     return {
       x: 80,
       y: SETTINGS.height - (250),
-      escala: 25,
+      radio_de_cabeza: 25,
       cabeza_con_cuello: 0,
       cuello_con_columna: 0,
       hombro_izquierdo: 0,
@@ -189,14 +189,20 @@ hago pantalla.pintarse().
 
 Hay ejemplos de scripts para extender directamente las personas de esta aplicación en:
 
-  - [`src/www/js/homactogramas/`](https://github.com/allnulled/constructor-de-homoactogramas-de-castelog/tree/main/src/www/js/homactogramas/)
+  - [`src/www/js/homactogramas/kit.calo`](https://github.com/allnulled/constructor-de-homoactogramas-de-castelog/tree/main/src/www/js/homactogramas/kit.calo)
 
-Estos ejemplos se cargan automáticamente (si lo especificas en `constructor-de-homactogramas-de-castelog.calo` y compilas el fichero).
+Estos ejemplos se cargan automáticamente.
 
 De momento, puedes hacer solamente:
 
 ```calo
-Hago asíncronamente persona.bailar_pateticamente().
+#######################################################
+hago asíncronamente persona.bailar_pateticamente(). ### eso.
+hago asíncronamente persona.agacharse().            ### se pone de cuclillas bajas.
+hago asíncronamente persona.desagacharse().         ### se quita de cuclillas bajas.
+hago asíncronamente persona.medioagacharse().       ### se pone de cuclillas altas.
+hago asíncronamente persona.desmedioagacharse().    ### se quita de cuclillas altas.
+hago asíncronamente persona.bailar_agachandose(2).  ### baila 2 vueltas agachándose.
 ```
 
 ## Instalación y ejecución local

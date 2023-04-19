@@ -133,7 +133,7 @@ throw error;
 }
 
 };
-for(let index = 0; index < 2; index++) {(await Castelog.metodos.una_espera_de(0.4 * 1000, () => {try {
+for(let index = 0; index < vueltas; index++) {(await Castelog.metodos.una_espera_de(0.4 * 1000, () => {try {
 null
 } catch(error) {
 console.log(error);
