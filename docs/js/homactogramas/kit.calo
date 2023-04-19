@@ -1,0 +1,104 @@
+creo kit_de_movimientos como un hecho donde {
+  creo bailar_pateticamente como una función asíncrona con (vueltas o en su defecto 4) donde {
+    desde 0 hasta vueltas {
+      hago asíncronamente this.rotar.hombro.izquierdo(0+45, 0).
+      hago asíncronamente this.rotar.hombro.derecho(0-45, 0).
+      si (index es igual que 0) o (index es igual que 1) {
+        hago asíncronamente this.rotar.codo.izquierdo(0-45, 0).
+        hago asíncronamente this.rotar.codo.derecho(0+45, 0).
+      } pero si (index es igual que 2) o (index es igual que 3) {
+        hago asíncronamente this.rotar.codo.izquierdo(0+45, 0).
+        hago asíncronamente this.rotar.codo.derecho(0-45, 0).
+      }.
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+      hago asíncronamente una espera de 200 milisegundos.
+      hago asíncronamente this.rotar.hombro.izquierdo(0-45, 0).
+      hago asíncronamente this.rotar.hombro.derecho(0+45, 0).
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+      hago asíncronamente una espera de 200 milisegundos.
+    }.
+  }.
+  creo agacharse como una función asíncrona donde {
+    hago asíncronamente this.posicionar.pierna.izquierda(0+75).
+    hago asíncronamente this.posicionar.rodilla.izquierda(0-75).
+    hago asíncronamente this.posicionar.pierna.derecha(0-75).
+    hago asíncronamente this.posicionar.rodilla.derecha(0+75).
+    hago asíncronamente this.posicionar.eje.y(this.constructor.estado_inicial.y+95).
+  }.
+  creo desagacharse como una función asíncrona donde {
+    hago asíncronamente this.posicionar.pierna.izquierda(0).
+    hago asíncronamente this.posicionar.rodilla.izquierda(0).
+    hago asíncronamente this.posicionar.pierna.derecha(0).
+    hago asíncronamente this.posicionar.rodilla.derecha(0).
+    hago asíncronamente this.posicionar.eje.y(this.constructor.estado_inicial.y).
+  }.
+  creo medioagacharse como una función asíncrona donde {
+    hago asíncronamente this.posicionar.pierna.izquierda(0+45).
+    hago asíncronamente this.posicionar.rodilla.izquierda(0-45).
+    hago asíncronamente this.posicionar.pierna.derecha(0-45).
+    hago asíncronamente this.posicionar.rodilla.derecha(0+45).
+    hago asíncronamente this.posicionar.eje.y(this.constructor.estado_inicial.y+38).
+  }.
+  creo desmedioagacharse como una función asíncrona donde {
+    hago asíncronamente this.posicionar.pierna.izquierda(0).
+    hago asíncronamente this.posicionar.rodilla.izquierda(0).
+    hago asíncronamente this.posicionar.pierna.derecha(0).
+    hago asíncronamente this.posicionar.rodilla.derecha(0).
+    hago asíncronamente this.posicionar.eje.y(this.constructor.estado_inicial.y).
+  }.
+  creo bailar_agachandose como una función asíncrona con (vueltas o en su defecto 4) donde {
+    creo mover_brazos_tambien como una lambda asíncrona con (index) donde {
+      creo index_compas como 4 - index.
+      si (index_compas es igual que 1) o (index_compas es igual que 3) {
+        hago asíncronamente this.rotar.hombro.izquierdo(0+45, 0).
+        hago asíncronamente this.rotar.hombro.derecho(0-45, 0).
+      } pero si (index_compas es igual que 0) o (index_compas es igual que 2) {
+        hago asíncronamente this.rotar.hombro.izquierdo(0-45, 0).
+        hago asíncronamente this.rotar.hombro.derecho(0+45, 0).
+      }.
+      si (index_compas es igual que 0) o (index_compas es igual que 1) {
+        hago asíncronamente this.rotar.codo.izquierdo(0+45, 0).
+        hago asíncronamente this.rotar.codo.derecho(0-45, 0).
+      } pero si (index_compas es igual que 2) o (index_compas es igual que 3) {
+        hago asíncronamente this.rotar.codo.izquierdo(0-45, 0).
+        hago asíncronamente this.rotar.codo.derecho(0+45, 0).
+      }.
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+      hago asíncronamente una espera de 200 milisegundos.
+    }.
+    desde 0 hasta 2 {
+      hago asíncronamente una espera de 0.4 segundos.
+      hago asíncronamente mover_brazos_tambien(1).
+      hago asíncronamente this.medioagacharse().
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+      hago asíncronamente una espera de 0.4 segundos.
+      hago asíncronamente mover_brazos_tambien(2).
+      hago asíncronamente this.agacharse().
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+      hago asíncronamente una espera de 0.4 segundos.
+      hago asíncronamente mover_brazos_tambien(3).
+      hago asíncronamente this.medioagacharse().
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+      hago asíncronamente una espera de 0.4 segundos.
+      hago asíncronamente mover_brazos_tambien(4).
+      hago asíncronamente this.desmedioagacharse().
+      hago window.datos_del_juego.juego.pantalla.pintarse().
+    }.
+  }.
+  creo decir como una función con (mensaje o en su defecto "...", tiempo_duracion o en su defecto 3000, tiempo_demora o en su defecto 0) donde {
+
+  }.
+  retorno {
+    decir,
+    bailar_pateticamente,
+    agacharse,
+    desagacharse,
+    medioagacharse,
+    desmedioagacharse,
+    bailar_agachandose
+  }.
+}.
+si window.datos_del_juego.juego.Persona.prototype es tipo indefinido asigno window.datos_del_juego.juego.Persona.prototype como {}.
+hago window.datos_del_juego.juego.Persona.prototype extendido por kit_de_movimientos.
+
+ignoro que hago persona.bailar_pateticamente().

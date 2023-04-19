@@ -58,7 +58,7 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
       return {
         x: 80,
         y: SETTINGS.height - (250),
-        escala: 25,
+        radio_de_cabeza: 25,
         cabeza_con_cuello: 0,
         cuello_con_columna: 0,
         hombro_izquierdo: 0,
@@ -116,7 +116,7 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
           x: (diff, secs = 0) => {
             return new Promise(ok => {
               setTimeout(() => {
-                this.x = this.constructor.estado_inicial.x + diff;
+                this.x = diff;
                 ok();
               }, secs);
             });
@@ -124,7 +124,7 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
           y: (diff, secs = 0) => {
             return new Promise(ok => {
               setTimeout(() => {
-                this.y = this.constructor.estado_inicial.y + diff;
+                this.y = diff;
                 ok();
               }, secs);
             });
@@ -295,19 +295,19 @@ function iniciar(exportar_a_variable_window = "datos_del_juego") {
       let punto_del_pie_der = undefined;
       Proceso_pintar_cabeza: {
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.escala, 0, Math.PI * 2, true);
+        ctx.arc(this.x, this.y, this.radio_de_cabeza, 0, Math.PI * 2, true);
         ctx.fillStyle = SETTINGS.color_de_articulaciones;
         ctx.fill();
         ctx.beginPath();
-        ctx.arc(this.x, this.y, this.escala, 0, Math.PI * 2, true);
+        ctx.arc(this.x, this.y, this.radio_de_cabeza, 0, Math.PI * 2, true);
         ctx.strokeStyle = SETTINGS.color_de_palos;
         ctx.stroke();
       }
       Proceso_pintar_cuello: {
         const cuello_origen_x = this.x;
-        const cuello_origen_y = this.y + this.escala;
+        const cuello_origen_y = this.y + this.radio_de_cabeza;
         const cuello_destino_x = this.x;
-        const cuello_destino_y = this.y + this.escala + 10;
+        const cuello_destino_y = this.y + this.radio_de_cabeza + 10;
         punto_del_cuello_bajo = [cuello_destino_x, cuello_destino_y];
         ctx.beginPath();
         ctx.moveTo(cuello_origen_x, cuello_origen_y);

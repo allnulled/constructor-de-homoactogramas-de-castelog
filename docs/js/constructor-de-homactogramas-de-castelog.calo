@@ -91,7 +91,7 @@ Desde 0 hasta 10 {
       asigno this.$window.datos_del_juego como this.$window.Paloman_API.iniciar().
       hago setTimeout(una lambda donde hago this.$window.datos_del_juego.pantalla.pintarse(), 1000).
       creo scripts_de_ejemplo como [
-        "./js/homactogramas/bailar-pateticamente.js"
+        "./js/homactogramas/kit.js"
       ].
       desde 0 hasta scripts_de_ejemplo.length {
         creo script_url como scripts_de_ejemplo[index].

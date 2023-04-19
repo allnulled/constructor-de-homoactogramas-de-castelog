@@ -151,7 +151,7 @@ throw error;
 
 },
 1000 );
-const scripts_de_ejemplo = [ "./js/homactogramas/bailar-pateticamente.js" ];
+const scripts_de_ejemplo = [ "./js/homactogramas/kit.js" ];
 for(let index = 0; index < scripts_de_ejemplo.length; index++) {const script_url = scripts_de_ejemplo[ index ];
 const script_tag = document.createElement( "script" );
 script_tag.src = script_url;
